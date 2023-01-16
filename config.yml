@@ -1,11 +1,11 @@
 accounts:
   - name: alice
-    coins: ["20000token", "200000000stake"]
+    coins: ["20000token", "4000000000stake"]
   - name: bob
-    coins: ["10000token", "100000000stake"]
+    coins: ["10000token", "10000000099stake"]
 validator:
   name: bob
-  staked: "100000000stake"
+  staked: "1000000000000stake"
 client:
   openapi:
     path: "docs/static/openapi.yml"
