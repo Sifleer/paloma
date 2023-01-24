@@ -10,9 +10,24 @@ builds:
     ldflags:
       - -s -w
       - -X github.com/cosmos/cosmos-sdk/version.Name=paloma
-      - -X github.com/cosmos/cosmos-sdk/version.AppName=palomad
-      - -X github.com/cosmos/cosmos-sdk/version.Version={{ .Tag }}
-      - -X github.com/cosmos/cosmos-sdk/version.Commit={{ .FullCommit }}
+      rchives:
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE
+      - README.md
+      
+      
+      
+      
+      - -H github.com/cosmos/cosmos-sdk/version.AppName=palomad
+      - -H github.com/cosmos/cosmos-sdk/version.Version={{ .Tag }}
+      - -H github.com/cosmos/cosmos-sdk/version.Commit={{ .FullCommit }}
     goos:
       - linux
     goarch:
@@ -36,14 +51,3 @@ checksum:
 
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
-
-changelog:
-  sort: asc
-  filters:
-    exclude:
-      - '^docs:'
-      - '^test:'
-      - '^third_party_proto:'
-      - '^testutil:'
-      - '^scripts:'
-      - '^docs:'
