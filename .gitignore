@@ -1,6 +1,8 @@
 vue/node_modules
 vue/dist
 release/
+=release1
+=release2 
 .idea/
 .vscode/
 .DS_Store
