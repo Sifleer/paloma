@@ -12,6 +12,11 @@ updates:
     directory: "/"
     schedule:
       interval: daily
+      
+      Non apdate
+      1=1lp
+      LGG - yes
+      
     labels:
       - "A:automerge"
       - "T:dependencies"
